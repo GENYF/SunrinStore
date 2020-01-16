@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <title>선린 매점 갤러리</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/post-list.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/post-detail.css' %}">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script>
+    function Notice() {
+      alert("서비스 준비중 입니다."); 
+    }
+  </script>
+</head>
+<body>
+  <div class="base">
+    <div class="base-logo">
+      <img class="base-img" src="{% static 'resources/logo.png' %}" width="80px" height="80px">
+      <h1 class="base-title">선린 매점 갤러리</h1>
+    </div>
+    <div class="base-menu">
+      <ul class="menu-list">
+        <li><a class="normal-button" href="{% url 'post_list' %}">갤러리</a></li>
+        <li><a class="normal-button" onclick="Notice();">매점 메뉴</a></li>
+        <li>
+          {% if user.is_authenticated %}
+            <a id="login-button" href="{% url 'logout' %}">로그아웃</a>
+          {% else %}
+            <a id="login-button" href="{% url 'login' %}">로그인</a>
+          {% endif %}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="content">
+    {% block content %}
+    {% endblock %}
+  </div>
+</body>
+
+

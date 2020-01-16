@@ -1,0 +1,94 @@
+.base{
+  display: flex;
+  justify-content: space-around;
+}
+
+.base > .base-logo{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.base > .base-logo > .base-title{
+  font-family: 'NanumSquare', sans-serif;
+  font-size: 38px;
+  margin-left: 10px;
+}
+
+.base > .base-menu{
+  align-items: center;
+}
+
+.base > .base-menu > .menu-list{
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.base > .base-menu > .menu-list > li > a{
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  color: white;
+  background-color: #6542f4;
+  width: 20vw;
+  border: 5px solid #6542f4;
+  border-radius: 60px;
+  margin-left: -60px;
+  text-align: center;
+  text-decoration: none;
+  padding: 14px;
+  font-family: 'NanumSquare', sans-serif;
+  font-size: 18px;
+}
+
+.base > .base-menu > .menu-list > li > a:hover{
+  background-color: white;
+  color: #6542f4;
+  z-index: 1;
+}
+
+@media screen and (max-width: 840px) {
+  .base{
+    display: block;
+  }
+
+  .base > .base-logo{
+    justify-content: center;
+    margin: auto;
+  }
+
+  .base > .base-logo > .base-img{
+    width: 70px;
+    height: 70px;
+  }
+
+  .base > .base-logo > .base-title{
+    font-size: 30px;
+  }
+
+  .base > .base-menu{
+    display: flex;
+    justify-content: center;
+    margin:0px auto;
+  }
+
+  .base > .base-menu > .menu-list{
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+    padding: 0px
+  }
+
+  .base > .base-menu > .menu-list > li{
+    float: none;
+  }
+
+  .base > .base-menu > .menu-list > li > a{
+    border-radius: 0px;
+    padding: 10px;
+    margin: auto;
+    width: 33.3vw;
+  }
+
+}
